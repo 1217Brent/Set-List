@@ -1,13 +1,15 @@
 import React from "react";
-
+import { useNavigate } from "react-router-dom";
 function UserProfileCard({ title, instrument, description, image }) {
-    console.log("Image source:", image); // Debugging: Check if image is being received
-
+    const navigate = useNavigate();
+    const handleNav = () => {
+        navigate('/chat');
+    }
     return (
         <div 
             className="card"
             style={{
-                width: "14rem", 
+                width: "50vw", 
                 borderRadius: "10px", 
                 overflow: "hidden", 
                 boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.1)",
@@ -27,11 +29,12 @@ function UserProfileCard({ title, instrument, description, image }) {
                     {title}
                 </p>
                 <p className="card-instrument" style={{ fontSize: "0.9rem", color: "#666", marginBottom: "5px" }}>
-                    {instrument}  {/* ✅ Fixed typo here */}
+                    {instrument}
                 </p>
                 <p className="card-description" style={{ fontSize: "0.8rem", color: "#333" }}>
                     {description}
                 </p>
+                <button onClick={handleNav}>Message Me!</button>
             </div>
         </div>
     );
