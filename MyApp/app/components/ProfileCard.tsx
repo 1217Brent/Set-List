@@ -5,7 +5,7 @@ import FormFields from "./FormFields";
 function ProfileCard() {
     return (
         <SafeAreaView>
-            <FormFields CARD_FIELDS={CARD_FIELDS}/>
+            <FormFields CARD_FIELDS={CARD_FIELDS} userId={""}/>
         </SafeAreaView>
     );
 }

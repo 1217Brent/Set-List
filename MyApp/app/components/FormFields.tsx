@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { SafeAreaView, View, Text, StyleSheet } from "react-native";
-import { CARD_FIELDS } from "../constants/ProfileCardConstants";
 
 // Define the type for each card field
 interface CardField {
@@ -15,23 +14,21 @@ interface FormFieldsProps {
 }
 
 const FormFields: React.FC<FormFieldsProps> = ({ userId, CARD_FIELDS }) => {
-  //use useEffect to iterate through ProfileCards and assign values based on the user prop
+  // Use useEffect to iterate through ProfileCards and assign values based on the user prop
   useEffect(() => {
     // Log ProfileCards to ensure we're getting the correct prop
     console.log(CARD_FIELDS);
   }, [CARD_FIELDS, userId]); // Run effect when ProfileCards changes
 
-
-
   return (
     <SafeAreaView style={styles.container}>
       {CARD_FIELDS.map((field, index) => (
-        <SafeAreaView key={index} style={styles.cardField}>
-          <View>
-            <Text style={styles.label}>{field.label}</Text>
-            <Text style={styles.value}>{field.value}</Text>
+        <View key={index} style={styles.card}>
+          <View style={styles.cardBody}>
+            <Text style={styles.cardTitle}>{field.label}</Text>
+            <Text style={styles.cardText}>{field.value}</Text>
           </View>
-        </SafeAreaView>
+        </View>
       ))}
     </SafeAreaView>
   );
@@ -41,14 +38,29 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
   },
-  cardField: {
+  card: {
+    backgroundColor: "#fff",
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: "#ddd",
     marginBottom: 10,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+    elevation: 1,
   },
-  label: {
+  cardBody: {
+    padding: 15,
+  },
+  cardTitle: {
+    fontSize: 18,
     fontWeight: "bold",
+    marginBottom: 5,
   },
-  value: {
-    color: "gray",
+  cardText: {
+    fontSize: 16,
+    color: "#555",
   },
 });
 
