@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import ProfileCard from './components/ProfileCard';
+import MatchPage from './components/Matching/MatchPage';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -9,8 +9,8 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="Home"
-          component={ProfileCard}
+          name="MatchPage"
+          component={MatchPage}
         />
     
       </Stack.Navigator>
