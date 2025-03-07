@@ -2,7 +2,7 @@ interface CARD_FIELDS {
     userId: string;
     name: string;
     age: string;
-    genre: string[];
+    genre: Array<String>;
     instrument: string;
     description: string;
   }

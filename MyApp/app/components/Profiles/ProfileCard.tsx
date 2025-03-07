@@ -14,7 +14,7 @@ interface ProfileCardProps {
     userId: string;
     name: string;
     age: string;
-    genre: string[];
+    genre: Array<String>;
     instrument: string;
     description: string;
 }
