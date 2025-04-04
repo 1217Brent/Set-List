@@ -1,5 +1,5 @@
-import { getAllEvents } from "@/backend/firebaseFunctions";
-import db from "@/backend/firebaseConfig";
+import { getAllEvents } from "@/app/components/backend/firebaseFunctions";
+import db from "../backend/firebaseConfig";
 import { useState, useEffect } from "react";
 import EventCards from "@/app/constants/EventConstants";
 import { SafeAreaView } from "react-native-safe-area-context";

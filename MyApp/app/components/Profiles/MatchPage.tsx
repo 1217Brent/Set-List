@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { View, Text } from "react-native";
 import ProfileCard from "./ProfileCard";
-import { getAllEvents, getAllUserCards } from "@/backend/firebaseFunctions";
-import db from "../../../backend/firebaseConfig";
+import { getAllEvents, getAllUserCards } from "../backend/firebaseFunctions";
+import db from "../backend/firebaseConfig";
 
 interface UserCard {
     id: string;

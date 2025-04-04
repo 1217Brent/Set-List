@@ -1,9 +1,13 @@
 import { BaseDocument } from "./BaseDocument";
 
-export interface UserCards extends BaseDocument{
+interface UserCards extends BaseDocument{
     name: string;
     age: number;
-    genre: Array<String>;
+    genre: string[];
+    email: string;
     description: string;
+    userId: string;
     instrument: string;
 }
+
+export default UserCards;
