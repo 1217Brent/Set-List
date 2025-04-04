@@ -1,7 +1,7 @@
 import { Firestore, QueryDocumentSnapshot, collection, doc, getDoc, updateDoc } from "firebase/firestore";
 import UserCards from "./collections/UserCards"
 import { getDocs } from "firebase/firestore";
-import EventCards from "@/app/constants/EventConstants";
+import EventCards from "@/app/components/backend/collections/constants/EventConstants";
 import BandCards  from "./collections/BandCards";
 
 const COLLECTION_NAME = "user-cards"; 

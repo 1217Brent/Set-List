@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, View, Text, StyleSheet } from "react-native";
-import CARD_FIELDS from "@/app/constants/ProfileCardConstants";
+import CARD_FIELDS from "@/app/components/backend/collections/constants/ProfileCardConstants";
 
 const FormFields: React.FC<CARD_FIELDS> = ({ userId, name, age, genre, instrument, description }) => {
   const [card, setCard] = useState<CARD_FIELDS>({
