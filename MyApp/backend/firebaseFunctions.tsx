@@ -34,6 +34,16 @@ export const getAllUserCards = async (db: Firestore): Promise<UserCards[]> => {
     }
 };
 
+// Yoshiki Update User Card
+export const updateUserCard = async (db: Firestore, id: string, updates: Partial<UserCards>) => {
+    const docRef = doc(collection(db, COLLECTION_NAME), id); 
+    try{
+        await updateDoc(docRef, updates);
+    }catch(error){
+        console.error("Could Not Update User Card:", error);
+    }
+}
+
 export const getAllEvents = async (db: Firestore): Promise<EventCards[]> => {
     const eventCollection = collection(db, EVENT_COLLECTION_NAME);
     try {
@@ -49,6 +59,16 @@ export const getAllEvents = async (db: Firestore): Promise<EventCards[]> => {
     }
 }; 
 
+// Yoshiki Update Events
+export const updateEvent = async (db: Firestore, id: string, updates: Partial<EventCards>) => {
+    const docRef = doc(collection(db, EVENT_COLLECTION_NAME), id); 
+    try{
+        await updateDoc(docRef, updates);
+    }catch(error){
+        console.error("Could Not Update Event", error);
+    }
+}
+
 export const getAllBandCards = async (db: Firestore): Promise<BandCards[]> => {
     const bandCollection = collection (db, BAND_COLLECTION_NAME);
     try {
@@ -62,12 +82,12 @@ export const getAllBandCards = async (db: Firestore): Promise<BandCards[]> => {
     }
 }
 
-export const updateUserCard = async (db: Firestore, id: string, updates: Partial<UserCards>) => {
-    const docRef = doc(collection(db, COLLECTION_NAME), id);
-    try {
+// Yoshiki Update Band Card
+export const updateBandCard = async (db: Firestore, id: string, updates: Partial<BandCards>) => {
+    const docRef = doc(collection(db, BAND_COLLECTION_NAME), id); 
+    try{
         await updateDoc(docRef, updates);
-    }
-    catch (error) {
-        console.log("Update User Card Error:", error);
+    }catch(error){
+        console.error("Could Not Update Band Card", error);
     }
 }
